@@ -3,7 +3,6 @@ $color-default-white: #f0f0f0;
 $color-transparent: rgba(255, 255, 255, 0);
 
 // Base
-
 $color-black: #0e0e0e;
 $color-white: #ffffff;
 $color-blue: #2c39f2;
@@ -16,7 +15,6 @@ $color-green: #2cdb52;
 $color-orange-hover: #f39425;
 
 // Gradient
-
 $black-to-right: linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
 $mobil-menu: linear-gradient(170.74deg, #633c0f -68.98%, #24150e 75.12%, #1a140d 132.97%);
 $background-footer: linear-gradient(180deg, rgba(19, 18, 18, 0) 0%, #131212 100%);
@@ -27,10 +25,9 @@ $background-maniac: linear-gradient(167.98deg, rgba(99, 60, 15, 0) 23.22%, rgba(
 $background-reserved: linear-gradient(158.6deg, #f2890f 9.78%, #b8600f 79.81%);
 $background-check: linear-gradient(180deg, #2cdb52 0%, #13ba19 100%);
 
-
+// font
 $font-main:                     "raleway", "Arial", sans-serif;
 
-
-
+// breakpoint
 $phones: 767px;
 $tablets: 1023px;
