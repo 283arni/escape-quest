@@ -1,0 +1,36 @@
+$color-default-black: #000000;
+$color-default-white: #f0f0f0;
+$color-transparent: rgba(255, 255, 255, 0);
+
+// Base
+
+$color-black: #0e0e0e;
+$color-white: #ffffff;
+$color-blue: #2c39f2;
+$color-orange: #f2890f;
+$color-light-gray: #e6e6e6;
+$color-gray: #b8b8b8;
+$color-gray-table: #c4c4c4;
+$color-modal-background: #141414;
+$color-green: #2cdb52;
+$color-orange-hover: #f39425;
+
+// Gradient
+
+$black-to-right: linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+$mobil-menu: linear-gradient(170.74deg, #633c0f -68.98%, #24150e 75.12%, #1a140d 132.97%);
+$background-footer: linear-gradient(180deg, rgba(19, 18, 18, 0) 0%, #131212 100%);
+$background-quests: linear-gradient(0deg, #141414 0%, #1f1d1d 100%);
+$background-info: linear-gradient(0.36deg, rgba(28, 27, 27, 0.9) 5.23%, rgba(46, 46, 46, 0) 98.38%);
+$background-tabs: linear-gradient(to left, #1c1b1b 0%, rgba(28, 27, 27, 0) 100%);
+$background-maniac: linear-gradient(167.98deg, rgba(99, 60, 15, 0) 23.22%, rgba(99, 60, 15, 0) 37.46%, #24150e 60.63%, #1a140d 106.79%);
+$background-reserved: linear-gradient(158.6deg, #f2890f 9.78%, #b8600f 79.81%);
+$background-check: linear-gradient(180deg, #2cdb52 0%, #13ba19 100%);
+
+
+$font-main:                     "raleway", "Arial", sans-serif;
+
+
+
+$phones: 767px;
+$tablets: 1023px;
