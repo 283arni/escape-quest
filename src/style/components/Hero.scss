@@ -1,88 +1,89 @@
-//.Hero {
-//  display: flex;
-//  flex-direction: column;
-//  align-items: flex-start;
-//  justify-content: center;
-//  padding-top: 10px;
-//  background: $color-black center/cover url("img/bg-start.jpg");
-//
-//  @include tablets {
-//    padding: 80px 0;
-//  }
-//
-//  @include phones {
-//    align-items: center;
-//    justify-content: flex-end;
-//    padding: 0;
-//  }
-//}
-//
-//.Hero__wrapper {
-//  width: 48%;
-//
-//  @include tablets {
-//    width: 80%;
-//    margin: 0 auto;
-//    text-align: center;
-//  }
-//
-//  @include phones {
-//    margin-bottom: 65px;
-//    width: 100%;
-//  }
-//
-//  h1 {
-//    font-weight: 800;
-//    font-size: 64px;
-//    color: $color-white;
-//    line-height: 110%;
-//    margin: 0 0 32px 0;
-//    letter-spacing: -0.01em;
-//
-//    @include phones {
-//      letter-spacing: normal;
-//      font-size: 36px;
-//      width: 90%;
-//      margin: 0 auto 35px auto;
-//    }
-//  }
-//
-//  p {
-//    font-weight: 500;
-//    font-size: 17px;
-//    line-height: 150%;
-//    margin: 0 0 68px 0;
-//
-//    @include phones {
-//      display: none;
-//    }
-//  }
-//
-//  a {
-//    display: inline-block;
-//    vertical-align: middle;
-//    background: $color-orange;
-//    border-radius: 65px;
-//    font-weight: 800;
-//    font-size: 17px;
-//    text-transform: uppercase;
-//    color: $color-white;
-//    padding: 23px 52px;
-//    letter-spacing: 0.03em;
-//    border: transparent;
-//    transition: 0.3s;
-//
-//    @include phones {
-//      font-size: 14px;
-//      padding: 15px 32px;
-//    }
-//
-//    &:hover {
-//      background: $color-orange-hover;
-//    }
-//
-//    &:active {
-//      opacity: 0.9;
-//    }
-//  }
-//}
+.Hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10px;
+  background: $background-start, $color-black center/cover url(../../img/bg-start.jpg);
+
+  @include tablets {
+    padding: 80px 0;
+  }
+
+  @include phones {
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+  }
+}
+
+.Hero__wrapper {
+  width: 48%;
+
+  @include tablets {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  @include phones {
+    margin-bottom: 65px;
+    width: 100%;
+  }
+
+  h1 {
+    font-weight: 800;
+    font-size: 64px;
+    color: $color-white;
+    line-height: 110%;
+    margin: 0 0 32px 0;
+    letter-spacing: -0.01em;
+
+    @include phones {
+      letter-spacing: normal;
+      font-size: 36px;
+      width: 90%;
+      margin: 0 auto 35px auto;
+    }
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 150%;
+    margin: 0 0 68px 0;
+
+    @include phones {
+      display: none;
+    }
+  }
+
+  a {
+    display: inline-block;
+    vertical-align: middle;
+    background: $color-orange;
+    border-radius: 65px;
+    font-weight: 800;
+    font-size: 17px;
+    text-transform: uppercase;
+    color: $color-white;
+    padding: 23px 52px;
+    letter-spacing: 0.03em;
+    border: transparent;
+    transition: 0.3s;
+
+    @include phones {
+      font-size: 14px;
+      padding: 15px 32px;
+    }
+
+    &:hover {
+      background: $color-orange-hover;
+    }
+
+    &:active {
+      opacity: 0.9;
+    }
+  }
+}

@@ -24,9 +24,10 @@ $background-tabs: linear-gradient(to left, #1c1b1b 0%, rgba(28, 27, 27, 0) 100%)
 $background-maniac: linear-gradient(167.98deg, rgba(99, 60, 15, 0) 23.22%, rgba(99, 60, 15, 0) 37.46%, #24150e 60.63%, #1a140d 106.79%);
 $background-reserved: linear-gradient(158.6deg, #f2890f 9.78%, #b8600f 79.81%);
 $background-check: linear-gradient(180deg, #2cdb52 0%, #13ba19 100%);
+$background-start: radial-gradient(41.41% 41.41% at 66.25% 48.18%, rgba(0, 0, 0, 0) 2.48%, rgba(0, 0, 0, 0) 63.56%, rgba(0, 0, 0, 0.71) 97.05%);
 
 // font
-$font-main:                     "raleway", "Arial", sans-serif;
+$font-main: "raleway", "Arial", sans-serif;
 
 // breakpoint
 $phones: 767px;

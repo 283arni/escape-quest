@@ -1,0 +1,128 @@
+.Footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-height: 76px;
+
+  .Footer__social {
+    display: flex;
+
+    @include phones {
+      display: none;
+    }
+  }
+}
+
+.Footer_quests {
+  background: $background-footer;
+}
+
+.Footer__social {
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 32px;
+  z-index: 20;
+
+  @include phones {
+    display: none;
+    padding: 16px;
+  }
+
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li:not(:last-of-type) {
+    margin-right: 7px;
+
+    @include phones {
+      margin-right: 15px;
+    }
+  }
+
+  a {
+    display: block;
+    width: 28px;
+    height: 28px;
+    transition: 0.3s;
+
+    @include phones {
+      width: 36px;
+      height: 36px;
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  a[href="https://www.instagram.com/"] {
+    background: no-repeat center url("../../img/icons/instagram-default.svg");
+
+    @include phones {
+      background-size: 100%;
+    }
+
+    &:hover {
+      background-image: url("../../img/icons/instagram-hover.svg");
+    }
+  }
+
+  a[href="https://www.vk.com/"] {
+    background: no-repeat center url("../../img/icons/vk-default.svg");
+
+    @include phones {
+      background-size: 100%;
+    }
+
+    &:hover {
+      background-image: url("../../img/icons/vk-hover.svg");
+    }
+  }
+
+  button {
+    font-weight: 500;
+    font-size: 11px;
+    color: $color-light-gray;
+    border: transparent;
+    height: 20px;
+    border-bottom: 1px dashed $color-light-gray;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: 0.2s;
+    letter-spacing: 0.03em;
+
+    @include phones {
+      font-size: 15px;
+      height: 22px;
+      letter-spacing: 0.07em;
+    }
+
+    &:hover {
+      color: $color-orange;
+      border-bottom: 1px dashed $color-orange;
+
+      span:first-of-type {
+        display: inline;
+      }
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+
+    span:first-of-type {
+      display: none;
+      margin-right: 5px;
+    }
+  }
+}

@@ -2,6 +2,7 @@
 
 @import "~normalize.css";
 @import "utils/var";
+@import "utils/reboot";
 @import "utils/mixins";
 
 // components
@@ -9,3 +10,5 @@
 @import "components/App";
 @import "components/Header";
 @import "components/Hero";
+@import "components/Footer";
+@import "components/Navigation";

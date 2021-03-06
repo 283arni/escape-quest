@@ -1,3 +1,12 @@
+.visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+
+    clip: rect(0 0 0 0);
+}
 
 .Wrapper {
     position: relative;
@@ -16,6 +25,32 @@
         &::-webkit-scrollbar {
             display: none;
         }
+    }
+}
+
+.scroll-lock {
+    position: fixed;
+
+    overflow-y: auto;
+}
+
+.btn-reset {
+    padding: 0;
+
+    background: $color-transparent;
+    border: none;
+    cursor: pointer;
+}
+
+@keyframes disableBreakpointAnimation {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    100% {
+        visibility: hidden;
+        opacity: 0;
     }
 }
 
