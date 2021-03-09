@@ -1,4 +1,5 @@
 import {FC} from "react";
+import {Link} from "react-router-dom";
 
 const Hero: FC = () => {
   return (
@@ -7,7 +8,7 @@ const Hero: FC = () => {
         <div className="Hero__wrapper">
           <h1>Лучшие квесты в Новосибирске</h1>
           <p>Надоело проводить свободное время лёжа на диване? Игровые площадки questroom на целый час погружают вас в мир незабываемых авантюр. Ищите подсказки, решайте головоломки и находите выход из комнаты!</p>
-          <a href="#">выбрать квест</a>
+          <Link to="/quests">выбрать квест</Link>
         </div>
       </div>
     </main>

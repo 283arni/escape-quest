@@ -1,24 +1,25 @@
 import {FC} from "react";
+import {NavLink} from "react-router-dom";
 
 const links = [
   {
-    href: '#',
+    href: '/quests',
     text: 'квесты'
   },
   {
-    href: '#',
+    href: '/noobs',
     text: 'новичкам'
   },
   {
-    href: '#',
+    href: '/reviews',
     text: 'отзывы'
   },
   {
-    href: '#',
+    href: '/sale',
     text: 'акции'
   },
   {
-    href: '#',
+    href: '/contacts',
     text: 'контакты'
   },
 ]
@@ -31,7 +32,7 @@ const Navigation: FC = () => {
           <li
             key={`${i}-${link.text}`}
           >
-            <a href={link.href}>{link.text}</a>
+            <NavLink exact to={link.href}>{link.text}</NavLink>
           </li>
         )}
       </ul>

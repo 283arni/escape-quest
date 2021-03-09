@@ -2,15 +2,16 @@ import {FC} from "react";
 import {ReactComponent as Logo} from '../../img/icons/logo.svg'
 import {ReactComponent as Location} from '../../img/icons/location.svg';
 import Navigation from "../Navigation/Navigation";
+import {Link} from "react-router-dom";
 
 const Header: FC = () => {
   return (
     <header className="Header">
       <div className="Header__wrapper">
         <div className="Header__logo">
-          <a href="#">
+          <Link to="/">
             <Logo width="134" height="52" />
-          </a>
+          </Link>
         </div>
         <input id="menu-button" type="checkbox"/>
         <label htmlFor="menu-button">МЕНЮ<span></span></label>
