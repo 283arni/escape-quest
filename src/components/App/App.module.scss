@@ -1,3 +1,6 @@
+@value vars: '../../styles/vars.modules.scss';
+@value color-transparent, tablets, phones from vars;
+
 .visually-hidden {
     position: absolute;
 
@@ -8,7 +11,7 @@
     clip: rect(0 0 0 0);
 }
 
-.Wrapper {
+.wrapper {
     position: relative;
 
     display: flex;
@@ -37,7 +40,7 @@
 .btn-reset {
     padding: 0;
 
-    background: $color-transparent;
+    background: color-transparent;
     border: none;
     cursor: pointer;
 }
@@ -54,24 +57,4 @@
     }
 }
 
-.Container {
-    width: 100%;
-    max-width: 1366px;
-    margin: 0 auto;
-    padding: 0 136px;
-
-    @include tablets {
-        padding: 0 32px;
-    }
-
-    @include phones {
-        padding: 0 16px;
-    }
-
-    &--no-padding {
-    @include phones {
-        padding: 0;
-        }
-    }
-}
 

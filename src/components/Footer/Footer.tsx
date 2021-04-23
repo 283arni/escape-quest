@@ -1,10 +1,11 @@
 import {FC} from "react";
+import classes from './Footer.module.scss';
 
 const Footer: FC = () => {
   return (
-    <footer className="Footer">
-      <div className="Footer__social">
-        <div className="Footer__links">
+    <footer className={classes.footer}>
+      <div className={classes.social}>
+        <div className={classes.quests}>
           <ul>
             <li><a href="https://www.instagram.com/" aria-label="Сайт instagram"></a></li>
             <li><a href="https://www.vk.com/" aria-label="Сайт vk"></a></li>

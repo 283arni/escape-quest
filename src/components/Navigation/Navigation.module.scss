@@ -1,5 +1,9 @@
-.Navigation {
-  @include phones {
+@value vars: '../../styles/vars.modules.scss';
+@value color-white, tablets, phones from vars;
+
+
+.navigation {
+  @media (max-width: phones) {
     order: 3;
     width: 100%;
     padding: 0 16px;
@@ -9,21 +13,21 @@
     display: flex;
     flex-wrap: wrap;
 
-    @include phones {
+    @media (max-width: phones) {
       flex-direction: column;
       align-items: center;
-      border-top: 1px solid rgba($color-white, 0.5);
+      border-top: 1px solid rgba(#ffffff, 0.5);
     }
   }
 
   li {
     margin: 0 25px;
 
-    @include tablets {
+    @media (max-width: tablets) {
       margin: 0 10px;
     }
 
-    @include phones {
+    @media (max-width: phones) {
       margin: 41px 0 0 0;
     }
   }
@@ -39,11 +43,11 @@
       opacity: 0.5;
     }
 
-    @include tablets {
+    @media (max-width: tablets) {
       font-size: 10px;
     }
 
-    @include phones {
+    @media (max-width: phones) {
       font-size: 16px;
     }
   }

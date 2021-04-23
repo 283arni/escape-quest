@@ -1,4 +1,5 @@
 import {FC} from "react";
+import classes from './Navigation.module.scss';
 
 const links = [
   {
@@ -25,7 +26,7 @@ const links = [
 
 const Navigation: FC = () => {
   return (
-    <nav className="Navigation">
+    <nav className={classes.navigation}>
       <ul>
         {links.map((link, i) =>
           <li

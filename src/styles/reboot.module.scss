@@ -1,3 +1,6 @@
+@value vars: './vars.modules.scss';
+@value font-main, color-default-white, color-default-black from vars;
+
 
 *,
 *::before,
@@ -22,17 +25,17 @@ body {
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
-  font-family: $font-main;
-  color: $color-default-white;
+  font-family: font-main;
+  color: color-default-white;
 
-  background-color: $color-default-white;
+  background-color: color-default-white;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-  color: $color-default-black;
+  color: color-default-black;
   text-decoration: none;
 }
 
@@ -48,9 +51,9 @@ textarea {
 }
 
 input:-webkit-autofill {
-  box-shadow: inset 0 0 0 1000px $color-default-white;
+  box-shadow: inset 0 0 0 1000px color-default-white;
 
-  -webkit-text-fill-color: $color-default-black;
+  -webkit-text-fill-color: color-default-black;
 }
 
 // firefox placeholder \ invalid fix + ios bdrs
