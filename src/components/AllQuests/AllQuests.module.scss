@@ -1,28 +1,41 @@
-.Quests {
+@value vars: '../../styles/vars.modules.scss';
+@value background-quests, color-orange, color-white, background-tabs, color-light-gray, background-info, color-white, tablets, phones from vars;
+
+.quests {
   flex: 1;
-  background: $background-quests;
+  background: background-quests;
   height: 100%;
   padding: 123px 0;
 
-  @include phones {
+  @media (max-width: phones) {
     padding-top: 90px;
   }
 
-  .Container {
-    padding-right: 125px;
+  .container {
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 0 136px;
 
-    @include tablets {
-      padding-right: 32px;
+    @media (max-width: tablets) {
+      padding: 0 80px;
     }
 
-    @include phones {
-      padding-right: 16px;
+    @media (max-width: phones) {
+      padding: 0 16px;
+    }
+
+    &--no-padding {
+      @media (max-width: phones) {
+        padding: 0;
+      }
     }
   }
 }
 
-.Quests__wrapper {
-  @include tablets {
+.wrapper {
+
+  @media (max-width: tablets) {
     width: 100%;
   }
 
@@ -32,10 +45,10 @@
     font-weight: 500;
     font-size: 13px;
     letter-spacing: 0.03em;
-    color: $color-orange;
+    color: color-orange;
     margin-bottom: 8px;
 
-    @include phones {
+    @media (max-width: phones) {
       margin-bottom: 13px;
     }
   }
@@ -45,10 +58,10 @@
     font-size: 64px;
     margin: 0 0 46px 0;
     line-height: normal;
-    color: $color-white;
+    color: color-white;
     letter-spacing: -0.01em;
 
-    @include phones {
+    @media (max-width: phones) {
       font-size: 36px;
       line-height: 110%;
       margin-bottom: 44px;
@@ -56,21 +69,21 @@
   }
 }
 
-.Quests__tabs {
+.tabs {
   position: relative;
 
   &::after {
-    @include tablets {
+    @media (max-width: tablets) {
       position: absolute;
       top: 0;
       right: -32px;
       height: 40px;
       width: 30%;
       content: "";
-      background: $background-tabs;
+      background: background-tabs;
     }
 
-    @include phones {
+    @media (max-width: phones) {
       right: -16px;
       height: 30px;
     }
@@ -78,10 +91,9 @@
 
   form {
     display: flex;
-
     flex-wrap: wrap;
 
-    @include tablets {
+    @media (max-width: tablets) {
       flex-wrap: nowrap;
     }
   }
@@ -93,7 +105,7 @@
     height: 40px;
     cursor: pointer;
 
-    @include tablets {
+    @media (max-width: tablets) {
       width: auto;
       height: 30px;
     }
@@ -102,14 +114,13 @@
       padding-right: 5px;
       justify-content: flex-start;
 
-      @include tablets {
+      @media (max-width: tablets) {
         padding-right: 14px;
       }
     }
 
     &:not(:first-of-type) {
-
-      @include tablets {
+      @media (max-width: tablets) {
         padding: 0 14px 0 18px;
       }
     }
@@ -117,7 +128,7 @@
     svg {
       margin-right: 11px;
 
-      @include phones {
+      @media (max-width: phones) {
         margin-right: 8px;
       }
     }
@@ -128,25 +139,25 @@
       font-size: 14px;
       letter-spacing: -0.02em;
       border-bottom: 2px solid transparent;
-      color: $color-light-gray;
+      color: color-light-gray;
       white-space: nowrap;
       padding: 6px 0;
 
-      @include phones {
+      @media (max-width: phones) {
         font-size: 13px;
         letter-spacing: 0.03em;
       }
     }
 
     &:not(:last-of-type) {
-      border-right: 1px solid rgba($color-white, 0.4);
+      border-right: 1px solid rgba(#ffffff, 0.4);
     }
   }
 
   label[for="all-tab"] {
     min-width: 14%;
 
-    @include tablets {
+    @media (max-width: tablets) {
       width: auto;
       min-width: auto;
     }
@@ -154,7 +165,7 @@
     svg {
       min-width: 21px;
 
-      @include tablets {
+      @media (max-width: tablets) {
         min-width: 21px;
         width: 21px;
         height: 24px;
@@ -165,12 +176,12 @@
   label[for="adventure-tab"] {
     width: 20.2%;
 
-    @include tablets {
+    @media (max-width: tablets) {
       width: auto;
     }
 
     svg {
-      @include tablets {
+      @media (max-width: tablets) {
         width: 29px;
         height: 24px;
       }
@@ -180,12 +191,12 @@
   label[for="horror-tab"] {
     width: 15.2%;
 
-    @include tablets {
+    @media (max-width: tablets) {
       width: auto;
     }
 
     svg {
-      @include tablets {
+      @media (max-width: tablets) {
         width: 22px;
         height: 24px;
       }
@@ -195,12 +206,12 @@
   label[for="mystic-tab"] {
     width: 16.5%;
 
-    @include tablets {
+    @media (max-width: tablets) {
       width: auto;
     }
 
     svg {
-      @include tablets {
+      @media (max-width: tablets) {
         width: 22px;
         height: 24px;
       }
@@ -210,12 +221,12 @@
   label[for="detective-tab"] {
     width: 17.6%;
 
-    @include tablets {
+    @media (max-width: tablets) {
       width: auto;
     }
 
     svg {
-      @include tablets {
+      @media (max-width: tablets) {
         width: 32px;
         height: 25px;
       }
@@ -225,12 +236,12 @@
   label[for="sci-fi-tab"] {
     width: 14%;
 
-    @include tablets {
+    @media (max-width: tablets) {
       width: auto;
     }
 
     svg {
-      @include tablets {
+      @media (max-width: tablets) {
         width: 22px;
         height: 24px;
       }
@@ -242,16 +253,16 @@
 
     &:checked + label {
       span {
-        border-bottom-color: $color-orange;
+        border-bottom-color: color-orange;
       }
     }
   }
 }
 
-.Quests__list {
+.list {
   margin-top: 38px;
 
-  @include phones {
+  @media (max-width: phones) {
     margin-top: 40px;
   }
 
@@ -263,7 +274,7 @@
     justify-content: center;
     flex-wrap: wrap;
 
-    @include phones {
+    @media (max-width: phones) {
       flex-direction: column;
       align-items: center;
     }
@@ -275,7 +286,7 @@
     position: relative;
     margin: 0 24px 32px 0;
 
-    @include phones {
+    @media (max-width: phones) {
       width: 328px;
       margin: 0 0 16px 0;
     }
@@ -296,7 +307,7 @@
   }
 }
 
-.Quests__img {
+.img {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -309,7 +320,7 @@
   }
 }
 
-.Quests__info {
+.info {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -319,12 +330,12 @@
   left: 0;
   right: 0;
   height: 70%;
-  background: $background-info;
+  background: background-info;
 
   h2 {
     font-weight: bold;
     font-size: 24px;
-    color: $color-white;
+    color: color-white;
     margin: 0 0 12px 0;
     line-height: 120%;
     width: 90%;
@@ -334,11 +345,11 @@
   span {
     font-weight: 500;
     font-size: 12px;
-    color: rgba($color-light-gray, 0.8);
+    color: rgba(#e6e6e6, 0.8);
   }
 }
 
-.Quests__address {
+.address {
   display: flex;
   align-items: center;
   margin-bottom: 4px;
@@ -348,12 +359,12 @@
   }
 
   svg {
-    fill: $color-orange;
+    fill: color-orange;
     margin-right: 10px;
   }
 }
 
-.Quests__amount {
+.amount {
   display: flex;
   align-items: center;
 
@@ -370,36 +381,36 @@
 
     &:first-of-type {
       padding-right: 14px;
-      border-right: 1px solid rgba($color-white, 0.5);
+      border-right: 1px solid rgba(#ffffff, 0.5);
     }
   }
 }
 
-.Quests__hit {
+.hit {
   position: absolute;
   display: flex;
   align-items: center;
   border-radius: 20px;
-  border: 2px solid rgba($color-orange, 0.7);
+  border: 2px solid rgba(#f2890f, 0.7);
   top: 17px;
   right: 18px;
   padding: 6px 13px;
 
-  @include phones {
+  @media (max-width: phones) {
     top: 15px;
     right: 15px;
   }
 
   svg {
     margin-right: 4px;
-    fill: $color-orange;
+    fill: color-orange;
 
   }
 
   span {
     font-weight: 500;
     font-size: 12px;
-    color: $color-light-gray;
+    color: color-light-gray;
     line-height: 100%;
   }
 }

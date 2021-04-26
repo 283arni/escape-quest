@@ -1,9 +1,6 @@
 import {FC} from "react";
-<<<<<<< HEAD
 import classes from './Navigation.module.scss';
-=======
 import {NavLink} from "react-router-dom";
->>>>>>> 3d300c0567ce72416126e621a596adb33b72d9b8
 
 const links = [
   {

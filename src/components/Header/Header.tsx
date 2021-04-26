@@ -2,7 +2,7 @@ import {FC} from "react";
 import {ReactComponent as Logo} from '../../img/icons/logo.svg'
 import {ReactComponent as Location} from '../../img/icons/location.svg';
 import Navigation from "../Navigation/Navigation";
-<<<<<<< HEAD
+import {Link} from "react-router-dom";
 import classes from "./Header.module.scss";
 
 const Header: FC = () => {
@@ -10,17 +10,7 @@ const Header: FC = () => {
     <header className={classes.header}>
       <div className={classes.wrapper}>
         <div className={classes.logo}>
-          <a href="#">
-=======
-import {Link} from "react-router-dom";
-
-const Header: FC = () => {
-  return (
-    <header className="Header">
-      <div className="Header__wrapper">
-        <div className="Header__logo">
           <Link to="/">
->>>>>>> 3d300c0567ce72416126e621a596adb33b72d9b8
             <Logo width="134" height="52" />
           </Link>
         </div>
