@@ -23,74 +23,15 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-// const urlNames = [
-//   'adventure.jpg',
-//   'adventure.webp',
-//   'adventure@2x.jpg',
-//   'adventure@2x.webp',
-//   'basement.jpg',
-//   'basement.webp',
-//   'basement@2x.jpg',
-//   'basement@2x.webp',
-//   'experiment.jpg',
-//   'experiment.webp',
-//   'experiment@2x.jpg',
-//   'experiment_2x.webp',
-//   'ghost.jpg',
-//   'ghost.webp',
-//   'ghost@2x.jpg',
-//   'ghost_2x.webp',
-//   'last-time.jpg',
-//   'last-time.webp',
-//   'last-time@2x.jpg',
-//   'last-time_2x.webp',
-//   'maniac.jpg',
-//   'maniac.webp',
-//   'maniac@2x.jpg',
-//   'maniac_2x.webp',
-//   'mansion.jpg',
-//   'mansion.webp',
-//   'mansion@2x.jpg',
-//   'mansion_2x.webp',
-//   'marsian.jpg',
-//   'marsian.webp',
-//   'marsian@2x.jpg',
-//   'marsian_2x.webp',
-//   'metro.jpg',
-//   'metro.webp',
-//   'metro@2x.jpg',
-//   'metro_2x.webp',
-//   'rite.jpg',
-//   'rite.webp',
-//   'rite@2x.jpg',
-//   'rite_2x.webp',
-//   'ritual.jpg',
-//   'ritual.webp',
-//   'ritual@2x.jpg',
-//   'ritual_2x.webp'
-// ]
-
-
 // set new card
-const addNewCard = async (cards: { hit: boolean; address: string; level: string; genres: string[]; name: string; description: string; id: number; time: number; title: string; people: { min: number; max: number } }[]): Promise<void> => {
-  await firebase.firestore().collection("cards").doc(cards[0].name).set(cards[0])
+const addNewCard = (cards: { hit: boolean; address: string; level: string; genres: string[]; name: string; description: string; id: number; time: number; title: string; people: { min: number; max: number } }[]): void => {
+  cards.forEach((card) => {
+    firebase.firestore().collection("cards").doc(card.name).set(card)
+  })
 }
 
 
-// const getArr = async () => {
-//     return  await firebase
-//       .storage()
-//       .ref()
-//       .list()
-// };
-//
-// const getUrls = async () => {
-//
-//   const d = await getArr().then((ref) => ref.items.map(item => item.getDownloadURL()));
-//   console.log(d)
-// }
-//
-// console.log(getUrls())
+
 
 const AllQuests: FC =  () => {
 
