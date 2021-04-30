@@ -1,4 +1,4 @@
-import {FC} from "react";
+import {FC, CSSProperties} from "react";
 import classes from './Navigation.module.scss';
 import {NavLink} from "react-router-dom";
 
@@ -26,6 +26,11 @@ const links = [
 ]
 
 const Navigation: FC = () => {
+
+  const activeClass: CSSProperties = {
+    color: '#f2890f'
+  }
+
   return (
     <nav className={classes.navigation}>
       <ul>
@@ -33,7 +38,7 @@ const Navigation: FC = () => {
           <li
             key={`${i}-${link.text}`}
           >
-            <NavLink exact to={link.href}>{link.text}</NavLink>
+            <NavLink activeStyle={activeClass} exact to={link.href}>{link.text}</NavLink>
           </li>
         )}
       </ul>

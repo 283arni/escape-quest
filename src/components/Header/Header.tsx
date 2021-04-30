@@ -15,7 +15,7 @@ const Header: FC = () => {
           </Link>
         </div>
         <input id="menu-button" type="checkbox"/>
-        <label htmlFor="menu-button">МЕНЮ<span></span></label>
+        <label htmlFor="menu-button">МЕНЮ<span/></label>
         <div className={classes.container}>
           <Navigation/>
           <button type="button" data-modal="location">
