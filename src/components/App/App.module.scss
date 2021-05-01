@@ -1,4 +1,4 @@
-@value vars: '../../styles/vars.modules.scss';
+@value vars: '../../styles/vars.module.scss';
 @value color-transparent, tablets, phones from vars;
 
 .visually-hidden {
@@ -35,14 +35,6 @@
     position: fixed;
 
     overflow-y: auto;
-}
-
-.btn-reset {
-    padding: 0;
-
-    background: color-transparent;
-    border: none;
-    cursor: pointer;
 }
 
 @keyframes disableBreakpointAnimation {

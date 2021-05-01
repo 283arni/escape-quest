@@ -1,0 +1,211 @@
+@value vars: '../../styles/vars.module.scss';
+@value color-orange-hover, color-modal-background, color-orange, color-white, color-default-white, color-gray, phones from vars;
+
+.content {
+  width: 415px;
+
+  @media (max-width: phones) {
+    width: 100%;
+  }
+
+  h2 {
+    font-weight: 800;
+    font-size: 32px;
+    margin: 3px 0 45px 0;
+
+    @media (max-width: phones) {
+      margin: 18px 0 40px 0;
+    }
+  }
+
+  button {
+    background: color-orange;
+    border: transparent;
+    font-weight: 800;
+    font-size: 14px;
+    color: color-white;
+    letter-spacing: 0.03em;
+    padding: 16px  32px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    margin: 0 auto 23px auto;
+    display: block;
+    transition: 0.3s;
+
+
+    &:not(:disabled):hover {
+      cursor: pointer;
+      background: color-orange-hover;
+    }
+
+    &:not(:disabled):active {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+
+    &:disabled {
+      background: color-gray;
+    }
+  }
+
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 17px 24px;
+    border: 1px solid rgba(#ffffff, 0.5);
+    font-weight: 500;
+    font-size: 14px;
+    color: color-default-white;
+    border-radius: 3px;
+    background: transparent;
+    width: 96%;
+    cursor: pointer;
+    resize: vertical;
+
+    &:hover,
+    &:focus {
+      opacity: 0.5;
+    }
+
+    @media (max-width: phones) {
+      width: 97%;
+    }
+  }
+}
+
+.name,
+.mail {
+  position: relative;
+  margin-bottom: 37px;
+
+  @media (max-width: phones) {
+    margin-bottom: 33px;
+  }
+
+  div {
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 15px;
+
+    @media (max-width: phones) {
+      margin-bottom: 13px;
+      font-size: 14px;
+      width: 90%;
+      line-height: 170%;
+    }
+  }
+
+  label {
+    transition: 0.3s;
+    position: absolute;
+    bottom: 15px;
+    left: 24px;
+    color: rgba(#e6e6e6, 0.5);
+  }
+
+  input:focus + label,
+  input:not(:placeholder-shown) + label {
+    bottom: 40px;
+    font-size: 12px;
+    z-index: 10;
+    background: color-modal-background;
+    padding: 0 5px;
+  }
+
+  ::-webkit-input-placeholder {
+    opacity: 0;
+  }
+
+  input:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+
+  span {
+    display: none;
+    position: absolute;
+    left: 24px;
+    bottom: -25px;
+    color: rgba(#f2890f, 0.5);
+    font-weight: 500;
+    font-size: 12px;
+  }
+}
+
+.text {
+  margin-bottom: 25px;
+
+  @media (max-width: phones) {
+    margin-bottom: 29px;
+  }
+
+  label {
+    display: block;
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+  textarea {
+    min-height: 120px;
+    resize: none;
+  }
+}
+
+.check {
+  display: flex;
+  position: relative;
+
+  input {
+    display: none;
+
+    &:checked + label {
+      background: color-orange no-repeat center url("../../img/icons/mark.svg");
+      opacity: 1;
+    }
+  }
+
+  label {
+    display: block;
+    min-width: 16px;
+    height: 16px;
+    background-color: color-orange;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 8px;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 0.3;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    margin: 0 0 5px 0;
+    line-height: 130%;
+  }
+
+  a {
+    color: color-default-white;
+    text-decoration: underline;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  span {
+    display: none;
+    position: absolute;
+    left: 24px;
+    bottom: -20px;
+    color: rgba(#f2890f, 0.5);
+    font-weight: 500;
+    font-size: 12px;
+  }
+}

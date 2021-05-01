@@ -1,0 +1,129 @@
+@value vars: '../../styles/vars.module.scss';
+@value color-default-black, modal-transition-settings, color-modal-background, color-transparent, phones from vars;
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+
+  background-color: rgba(#000000, 0.6);
+  transform: scale(1.2);
+  //visibility: hidden;
+  //opacity: 0;
+  //pointer-events: none;
+
+  transition: opacity modal-transition-settings,
+  transform modal-transition-settings,
+  visibility modal-transition-settings;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.wrapper {
+  position: relative;
+
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 60px 40px;
+
+  @media (max-width: phones) {
+    padding: 0;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.content {
+  position: relative;
+  border-radius: 3px;
+  min-width: 480px;
+  padding: 32px;
+
+  background: color-modal-background;
+
+  @media (max-width: phones) {
+    min-width: 100%;
+    height: 100%;
+    padding: 15px;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 40px;
+  right: 32px;
+
+  @media (max-width: phones) {
+    right: 15px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.btnReset {
+  padding: 0;
+
+  background: color-transparent;
+  border: none;
+  cursor: pointer;
+}
+
+//.modal_responsive {
+//  .modal__content {
+//    width: 100%;
+//  }
+//}
+//
+//.modal_fit-content {
+//  .modal__content {
+//    width: auto;
+//
+//    @media (max-width: phones) {
+//      width: 100%;
+//    }
+//  }
+//}
+//
+//.modal_no-scale {
+//  transform: none;
+//}
+//
+//.preload {
+//  display: none;
+//}
+//
+//.modal_active {
+//  transform: scale(1);
+//  visibility: visible;
+//  opacity: 1;
+//  pointer-events: auto;
+//}

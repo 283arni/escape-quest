@@ -5,7 +5,11 @@ import Navigation from "../Navigation/Navigation";
 import {Link} from "react-router-dom";
 import classes from "./Header.module.scss";
 
-const Header: FC = () => {
+type Props = {
+  onOpenPopupClick:(name: string) => void
+}
+
+const Header: FC<Props> = ({onOpenPopupClick}: Props) => {
   return (
     <header className={classes.header}>
       <div className={classes.wrapper}>
@@ -18,7 +22,11 @@ const Header: FC = () => {
         <label htmlFor="menu-button">МЕНЮ<span/></label>
         <div className={classes.container}>
           <Navigation/>
-          <button type="button" data-modal="location">
+          <button
+            type="button"
+            data-modal="location"
+            onClick={() => onOpenPopupClick("location-popup")}
+          >
             <Location width="16" height="21"/>
             <span>новосибирск</span>
           </button>
