@@ -1,3 +1,4 @@
+
 export type questType = {
   hit: boolean;
   address: string;
@@ -10,12 +11,18 @@ export type questType = {
   title: string;
   people: {
     min: number;
-    max: number
+    max: number;
   },
   pictures: {
-    jpgFormat: string,
-    jpgFormatRetina: string,
-    webpFormat: string,
-    webpFormatRetina: string
+    jpgFormat: string;
+    jpgFormatRetina: string;
+    webpFormat: string;
+    webpFormatRetina: string;
   }
+}
+
+export type tabType = {
+  id: string;
+  title: string;
+  icon: JSX.Element;
 }

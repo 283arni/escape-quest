@@ -1,5 +1,6 @@
 import firebase from "firebase/app";
-import 'firebase/firestore'
+import 'firebase/firestore';
+import {cards} from "./data/cards";
 
 import {questType} from "./types";
 

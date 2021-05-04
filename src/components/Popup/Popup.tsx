@@ -9,14 +9,16 @@ type Content = {
 }
 
 type Props = {
-  name: string
+  name: string,
+  onOpenPopupClick: (name: string) => void
 }
 
-const Popup: FC<Props> = ({name}: Props) => {
+const popupContent: Content = {
+  'location': <Location />,
+  'feedback': <Feedback />,
+}
 
-  const popupContent: Content = {
-    'location-popup': <Location/>,
-  }
+const Popup: FC<Props> = ({name, onOpenPopupClick}: Props) => {
 
   return (
   <div className={`${classes.modal} ${classes.preload}`}>
@@ -24,8 +26,13 @@ const Popup: FC<Props> = ({name}: Props) => {
       <div className={classes.overlay}/>
       <div className={classes.content}>
         {popupContent[name]}
-        <button className={`${classes.closeBtn} ${classes.btnReset}`} type="button" aria-label="close popup">
-          <Close width={14} height={14}/>
+        <button
+          className={`${classes.closeBtn} ${classes.btnReset}`}
+          type="button"
+          aria-label="close popup"
+          onClick={() => onOpenPopupClick('')}
+        >
+          <Close width={14} height={14} />
         </button>
       </div>
     </div>

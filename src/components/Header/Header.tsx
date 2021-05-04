@@ -25,7 +25,7 @@ const Header: FC<Props> = ({onOpenPopupClick}: Props) => {
           <button
             type="button"
             data-modal="location"
-            onClick={() => onOpenPopupClick("location-popup")}
+            onClick={() => onOpenPopupClick("location")}
           >
             <Location width="16" height="21"/>
             <span>новосибирск</span>
