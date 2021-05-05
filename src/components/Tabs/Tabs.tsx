@@ -6,10 +6,10 @@ import Tab from "../Tab/Tab";
 
 type Props = {
   activeTab: string;
-  onSortQuestsClick: (title : string) => void;
+  onSortQuestsChange: (title : string) => void;
 }
 
-const Tabs: FC<Props> = ({onSortQuestsClick, activeTab}: Props) => {
+const Tabs: FC<Props> = ({onSortQuestsChange, activeTab}: Props) => {
   return (
     <form className={classes.tabs}>
       {tabs.map((tab: tabType) =>
@@ -17,7 +17,7 @@ const Tabs: FC<Props> = ({onSortQuestsClick, activeTab}: Props) => {
           key={tab.id}
           tab={tab}
           activeTab={activeTab}
-          onSortQuestsClick={onSortQuestsClick}
+          onSortQuestsChange={onSortQuestsChange}
         />)}
     </form>
   )

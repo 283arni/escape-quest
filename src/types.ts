@@ -1,3 +1,5 @@
+import firebase from "firebase";
+import DocumentData = firebase.firestore.DocumentData;
 
 export type questType = {
   hit: boolean;
@@ -19,10 +21,15 @@ export type questType = {
     webpFormat: string;
     webpFormatRetina: string;
   }
-}
+} | DocumentData
 
 export type tabType = {
   id: string;
   title: string;
   icon: JSX.Element;
+}
+
+export type activeQuestsType = {
+  activeTab: string,
+  sortedQuests: [] | questType[]
 }

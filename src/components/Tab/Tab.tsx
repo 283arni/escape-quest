@@ -4,10 +4,10 @@ import {tabType} from "../../types";
 type Props = {
   activeTab: string;
   tab: tabType;
-  onSortQuestsClick: (title : string) => void;
+  onSortQuestsChange: (title : string) => void;
 }
 
-const Tab: FC<Props> = ({tab, activeTab, onSortQuestsClick}: Props) => {
+const Tab: FC<Props> = ({tab, activeTab, onSortQuestsChange}: Props) => {
   return (
     <>
       <input
@@ -15,7 +15,7 @@ const Tab: FC<Props> = ({tab, activeTab, onSortQuestsClick}: Props) => {
         name="tab"
         id={tab.id}
         checked={activeTab === tab.title}
-        onChange={() => onSortQuestsClick(tab.title)}
+        onChange={() => onSortQuestsChange(tab.title)}
       />
       <label
         htmlFor={tab.id}
