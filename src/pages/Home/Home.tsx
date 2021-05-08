@@ -1,8 +1,9 @@
 import {FC} from "react";
-import classes from './Hero.module.scss'
 import {Link} from "react-router-dom";
 
-const Hero: FC = () => {
+import classes from './Home.module.scss'
+
+const Home: FC = () => {
   return (
     <main className={classes.hero}>
       <div className={classes.container}>
@@ -16,4 +17,4 @@ const Hero: FC = () => {
   )
 }
 
-export default Hero;
+export default Home;

@@ -1,0 +1,213 @@
+@value vars: '../../styles/vars.module.scss';
+@value color-light-gray, background-maniac, color-black, color-orange, color-orange-hover, color-white, tablets, phones from vars;
+
+.quest {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  background: color-black;
+
+  @media (max-width: phones) {
+    padding-top: 88px;
+    align-items: flex-end;
+    background: background-maniac;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 136px;
+
+  @media (max-width: tablets) {
+    padding: 0 80px;
+  }
+
+  @media (max-width: phones) {
+    padding: 0 16px;
+  }
+
+  &--no-padding {
+    @media (max-width: phones) {
+      padding: 0;
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 42.5%;
+
+  @media (max-width: tablets) {
+    margin-left: 0;
+  }
+
+  a[href="quests.html"] {
+    display: none;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: color-light-gray;
+    text-transform: uppercase;
+    padding-left: 15px;
+    line-height: 20px;
+    vertical-align: middle;
+    margin-bottom: 294px;
+
+    @media (max-width: phones) {
+      display: inline-block;
+    }
+  }
+
+  > span {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 500;
+    font-size: 14px;
+    color: color-orange;
+    margin: 0 0 3px 5px;
+
+    @media (max-width: phones) {
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+  }
+
+  h1 {
+    font-weight: 900;
+    font-size: 92px;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+
+    @media (max-width: phones) {
+      font-size: 42px;
+      letter-spacing: normal;
+    }
+  }
+}
+
+.description {
+  padding-left: 30px;
+
+  @media (max-width: tablets) {
+    padding-left: 0;
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 15px;
+    color: color-light-gray;
+    line-height: 150%;
+    margin: 0 0 42px 0;
+    width: 90%;
+
+    @media (max-width: phones) {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+
+  a {
+    display: inline-block;
+    vertical-align: middle;
+    color: color-white;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 23px 48px;
+    font-weight: 800;
+    font-size: 17px;
+    background: color-orange;
+    border-radius: 64px;
+
+    @media (max-width: phones) {
+      margin-bottom: 58px;
+    }
+
+    &:hover {
+      background: color-orange-hover;
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+}
+
+
+.info {
+  display: flex;
+  margin-bottom: 20px;
+
+  @media (max-width: phones) {
+    margin-bottom: 16px;
+    max-width: 100%;
+  }
+}
+
+.infoBlock {
+  padding: 0 24px;
+
+  &:last-of-type {
+    padding-right: 0;
+  }
+
+  &:not(:last-of-type) {
+    border-right: 1px solid rgba(#ffffff, 0.4);
+    max-height: 45px;
+
+    @media (max-width: phones) {
+      padding: 0 20px;
+    }
+  }
+
+  &:first-of-type {
+    padding-left: 0;
+
+    @media (max-width: phones) {
+      padding: 0 22px 0 8px;
+    }
+  }
+}
+
+.align {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: phones) {
+    flex-direction: column;
+    width: 75px;
+  }
+
+  svg {
+    margin-right: 10px;
+
+    &:not(:first-of-type) {
+      margin: 0 10px 0 25px;
+    }
+
+    @media (max-width: phones) {
+      margin: 0 0 10px 0;
+    }
+  }
+
+  span {
+    font-size: 13px;
+    color: color-light-gray;
+    line-height: 36px;
+    letter-spacing: 0.03em;
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    @media (max-width: phones) {
+      line-height: normal;
+      text-align: center;
+    }
+  }
+}

@@ -21,9 +21,10 @@ export const setNewQuests = (cards: questType[]) => {
   })
 }
 
+export const getQuests = () => {
+  return firestore.collection("cards").get();
+}
+
 // upload cards to firebase
 // setNewQuests(cards)
 
-export const getQuests = () => {
- return firestore.collection("cards").get();
-}

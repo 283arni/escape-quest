@@ -1,10 +1,12 @@
 import {FC} from "react";
-import classes from "../AllQuests/AllQuests.module.scss";
+import {Link, useHistory} from "react-router-dom";
 import {ReactComponent as Location} from "../../img/icons/location.svg";
 import {ReactComponent as Person} from "../../img/icons/person.svg";
 import {ReactComponent as Puzzle} from "../../img/icons/puzzle.svg";
 import {ReactComponent as Star} from "../../img/icons/star.svg";
 import {questType} from "../../types";
+
+import classes from "./Card.module.scss";
 
 
 type Props = {
@@ -18,7 +20,12 @@ const Card: FC<Props> = ({quest}: Props) => {
 
   return (
     <li key={quest.id}>
-      <a href="#">
+      <Link
+        to={{
+          pathname: '/quest',
+          state: {quest}
+        }}
+      >
         <div className={classes.img}>
           <picture>
             <source srcSet={`${webpFormat} 1x,${webpFormatRetina} 2x`} type="image/webp"/>
@@ -46,7 +53,7 @@ const Card: FC<Props> = ({quest}: Props) => {
             </div>
             : null
         }
-      </a>
+      </Link>
     </li>
   )
 }

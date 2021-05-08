@@ -1,14 +1,15 @@
 import {FC, useEffect, useState} from "react";
-import Tabs from "../Tabs/Tabs";
-import classes from './AllQuests.module.scss'
+import Tabs from "../../components/Tabs/Tabs";
+import Card from "../../components/Card/Card";
+import Loader from "../../components/Loader/Loader";
 import {getQuests} from "../../api";
 import {activeQuestsType, questType} from "../../types";
-import Card from "../Card/Card";
-import Loader from "../Loader/Loader";
+
+import classes from './Quests.module.scss'
 
 
 
-const AllQuests: FC =  () => {
+const Quests: FC =  () => {
 
   const [quests, setQuests] = useState<[] | questType[]>([]);
   const [activeQuests, setSortQuest] = useState<activeQuestsType>({activeTab: 'Все квесты', sortedQuests: []});
@@ -47,7 +48,8 @@ const AllQuests: FC =  () => {
   return (
     <main className={classes.quests}>
       <div className={classes.container}>
-        <div className={classes.wrapper}><span>квесты в Новосибирске</span>
+        <div className={classes.wrapper}>
+          <span>квесты в Новосибирске</span>
           <h1>Выберите тематику</h1>
           <Tabs
             activeTab={activeQuests.activeTab}
@@ -67,4 +69,4 @@ const AllQuests: FC =  () => {
   )
 }
 
-export default AllQuests;
+export default Quests;
