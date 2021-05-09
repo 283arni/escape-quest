@@ -5,7 +5,7 @@
   display: flex;
   flex: 1;
   align-items: center;
-  background: color-black;
+  background: color-black no-repeat center/cover;
 
   @media (max-width: phones) {
     padding-top: 88px;

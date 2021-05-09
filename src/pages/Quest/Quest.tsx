@@ -1,4 +1,5 @@
 import {FC} from "react";
+import {Link} from "react-router-dom";
 import {ReactComponent as Clock} from "../../img/icons/clock.svg";
 import {ReactComponent as Puzzle} from "../../img/icons/puzzle.svg";
 import {ReactComponent as Person} from "../../img/icons/person.svg";
@@ -18,34 +19,37 @@ const Quest: FC<Props> = ({location}: Props) => {
   const quest = location.state.quest;
 
   return (
-    <main className={classes.quest}>
+    <main
+      className={classes.quest}
+      style={{backgroundImage: `url(${quest.pictures.jpgFormatRetina})`}}
+    >
       <div className={classes.container}>
         <div className={classes.wrapper}>
-          <span>хоррор, триллер</span>
-          <h1>маньяк</h1>
+          <span>{quest.genres.join(', ')}</span>
+          <h1>{quest.title}</h1>
           <div className={classes.description}>
             <div className={classes.info}>
               <div className={classes.infoBlock}>
                 <div className={classes.align}>
                   <Clock height={20} width={20}/>
-                  <span>60 мин</span>
+                  <span>{`${quest.time} мин`}</span>
                 </div>
               </div>
               <div className={classes.infoBlock}>
                 <div className={classes.align}>
                   <Person height={18} width={23}/>
-                  <span>3-4 чел</span>
+                  <span>{`${quest.people.min}-${quest.people.max} чел`}</span>
                 </div>
               </div>
               <div className={classes.infoBlock}>
                 <div className={classes.align}>
                   <Puzzle height={22} width={22}/>
-                  <span>средняя сложность</span>
+                  <span>сложность &lt;{quest.level}&gt;</span>
                 </div>
               </div>
             </div>
-            <p> В комнате с приглушённым светом несколько человек, незнакомых друг с другом, приходят в себя. Никто не помнит, что произошло прошлым вечером. Руки и ноги связаным, но одному из вас получилось освободиться. На стене висит пугающий таймер и запущен отстёт 60 минут. Сможете ли вы разобраться в стрессовой ситуации, помочь другим, разобраться что произошло и выбраться из комнаты?</p>
-            <a href="/">забронировать</a>
+            <p>{quest.description}</p>
+            <Link to={{pathname: "/timetable", state: {quest}}}>забронировать</Link>
           </div>
         </div>
       </div>

@@ -33,3 +33,9 @@ export type activeQuestsType = {
   activeTab: string,
   sortedQuests: [] | questType[]
 }
+
+export type timeType = {
+  time: string;
+  price: string;
+  reserved: boolean;
+}
