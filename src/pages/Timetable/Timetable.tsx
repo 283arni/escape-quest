@@ -1,5 +1,5 @@
 import {ReactComponent as Triangle} from "../../img/icons/triangle.svg";
-import {FC, useState} from "react";
+import {FC, MouseEvent, useState} from "react";
 import Time from "../../components/Time/Time";
 import {times} from "../../data/timetable";
 import {questType, timeType} from "../../types";
@@ -19,8 +19,14 @@ const Timetable: FC<Props> = ({location}: Props) => {
 
   const [time, setTime] = useState<string>('')
 
-  const handleTimeChange = (time: string) => {
-    console.log(time)
+  const handleTimeChange = (e: any) => {
+
+    if (e.target.localName !== 'label') {
+      return;
+    }
+
+    const timeText = e.target.textContent;
+    setTime(timeText)
   }
 
   return (
@@ -64,9 +70,13 @@ const Timetable: FC<Props> = ({location}: Props) => {
               <div className={classes.samplesCheck}/>
               <span>— выбрано вами</span>
             </div>
-            <div className={classes.times} id="times">
+            <div
+              className={classes.times}
+              onClick={(e: MouseEvent<HTMLDivElement>) => handleTimeChange(e)}
+              id="times"
+            >
               <form>
-                  {times.map((item:timeType)=> <Time key={item.time} item={item}/>)}
+                  {times.map((item: timeType)=> <Time key={item.time} item={item} time={time}/>)}
               </form>
             </div>
           </div>
