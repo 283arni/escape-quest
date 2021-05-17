@@ -29,11 +29,6 @@ export type tabType = {
   icon: JSX.Element;
 }
 
-export type activeQuestsType = {
-  activeTab: string,
-  sortedQuests: [] | questType[]
-}
-
 export type timeType = {
   time: string;
   price: string;

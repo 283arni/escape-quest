@@ -1,10 +1,21 @@
 import {ReactComponent as Triangle} from "../../img/icons/triangle.svg";
-import {FC, MouseEvent, useState} from "react";
+import {ChangeEvent, FC, useRef, useState} from "react";
 import Time from "../../components/Time/Time";
 import {times} from "../../data/timetable";
 import {questType, timeType} from "../../types";
 
 import classes from "./Timetable.module.scss";
+
+const replaceDate = (date: string) => {
+  return date.split('.').reverse().join('-');
+}
+
+const setMaxDateCalendar = () => {
+  const date = new Date();
+  date.setDate(date.getDate() + 13);
+
+  return replaceDate(date.toLocaleDateString());
+}
 
 type Props = {
   location: {
@@ -17,16 +28,19 @@ type Props = {
 const Timetable: FC<Props> = ({location}: Props) => {
   const quest = location.state.quest;
 
-  const [time, setTime] = useState<string>('')
+  const [time, setTime] = useState<string>('');
+  const calendar = useRef(null);
+  const today = replaceDate(new Date().toLocaleDateString());
 
-  const handleTimeChange = (e: any) => {
 
-    if (e.target.localName !== 'label') {
-      return;
-    }
+  const handleTimeChange = (e: ChangeEvent<HTMLDivElement>) => {
 
-    const timeText = e.target.textContent;
-    setTime(timeText)
+    const time = e.target.id;
+    setTime(time)
+  }
+
+  const handleCalendarClick = () => {
+    console.log(calendar)
   }
 
   return (
@@ -55,11 +69,14 @@ const Timetable: FC<Props> = ({location}: Props) => {
           </div>
           <div className={classes.block}>
             <div className={classes.date}>
-              <button id="choose-date">
-                <span>Выберите дату</span>
-                <Triangle width={5} height={7}/>
-              </button>
-              <input type="date"/>
+              <h2>Выберите дату</h2>
+              <input
+                type="date"
+                ref={calendar}
+                min={today}
+                max={setMaxDateCalendar()}
+                defaultValue={today}
+                onClick={() => handleCalendarClick()}/>
               {/*<span id="date">22 марта</span>*/}
             </div>
             <div className={classes.samples} id="samples">
@@ -72,11 +89,11 @@ const Timetable: FC<Props> = ({location}: Props) => {
             </div>
             <div
               className={classes.times}
-              onClick={(e: MouseEvent<HTMLDivElement>) => handleTimeChange(e)}
+              onChange={(e: ChangeEvent<HTMLDivElement>) => handleTimeChange(e)}
               id="times"
             >
               <form>
-                  {times.map((item: timeType)=> <Time key={item.time} item={item} time={time}/>)}
+                  {times.map((item: timeType)=> <Time key={item.time} item={item}/>)}
               </form>
             </div>
           </div>

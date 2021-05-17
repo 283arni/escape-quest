@@ -2,20 +2,18 @@ import {FC} from "react";
 import {tabType} from "../../types";
 
 type Props = {
-  activeTab: string;
   tab: tabType;
-  onSortQuestsChange: (title : string) => void;
 }
 
-const Tab: FC<Props> = ({tab, activeTab, onSortQuestsChange}: Props) => {
+const Tab: FC<Props> = ({tab}: Props) => {
+
   return (
     <>
       <input
         type="radio"
         name="tab"
         id={tab.id}
-        checked={activeTab === tab.title}
-        onChange={() => onSortQuestsChange(tab.title)}
+        defaultChecked={tab.id === 'all-tabs'}
       />
       <label
         htmlFor={tab.id}

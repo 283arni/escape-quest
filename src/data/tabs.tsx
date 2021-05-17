@@ -9,7 +9,7 @@ import {tabType} from "../types";
 
 export const tabs: tabType[] = [
   {
-    id: "all-tab",
+    id: "all-tabs",
     title: "Все квесты",
     icon: <AllQuestsIcon />,
   },

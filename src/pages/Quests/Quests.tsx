@@ -1,18 +1,18 @@
-import {FC, useEffect, useState} from "react";
+import {ChangeEvent, FC, FormEvent, useEffect, useState} from "react";
 import Tabs from "../../components/Tabs/Tabs";
 import Card from "../../components/Card/Card";
 import Loader from "../../components/Loader/Loader";
 import {getQuests} from "../../api";
-import {activeQuestsType, questType} from "../../types";
+import {questType} from "../../types";
 
 import classes from './Quests.module.scss'
-
+import {tabs} from "../../data/tabs";
 
 
 const Quests: FC =  () => {
 
   const [quests, setQuests] = useState<[] | questType[]>([]);
-  const [activeQuests, setSortQuest] = useState<activeQuestsType>({activeTab: 'Все квесты', sortedQuests: []});
+  const [sortedQuests, setSortQuests] = useState<[] | questType[]>([]);
 
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Quests: FC =  () => {
         const quests = response.docs.map(doc => doc.data());
 
         setQuests(quests);
-        setSortQuest({...activeQuests ,sortedQuests: quests});
+        setSortQuests(quests);
       } catch (e) {
         throw new Error(`Ошибка при запросе, ${e}`);
       }
@@ -31,18 +31,24 @@ const Quests: FC =  () => {
     fetchFirestoreQuests();
   }, [])
 
-  const handleSortQuestsChange = (title: string): void => {
+  const handleSortQuestsChange = (e: ChangeEvent<HTMLFormElement>): void => {
 
-    if (title === 'Все квесты') {
-      setSortQuest({activeTab: title, sortedQuests: quests});
-      return;
-    }
+    const id =  e.target.id
 
-    const sortedQuests = quests.filter((quest: questType) => {
-      return quest.genres.some((genre: string) => genre === title.toLowerCase());
+    tabs.forEach((tab) => {
+      if (id === 'all-tabs') {
+        setSortQuests(quests);
+        return;
+      }
+
+      if (tab.id === id) {
+        const sortedQuests = quests.filter((quest: questType) => {
+          return quest.genres.some((genre: string) => genre === tab.title.toLowerCase());
+        })
+
+        setSortQuests(sortedQuests);
+      }
     })
-
-    setSortQuest({activeTab: title, sortedQuests});
   }
 
   return (
@@ -52,14 +58,13 @@ const Quests: FC =  () => {
           <span>квесты в Новосибирске</span>
           <h1>Выберите тематику</h1>
           <Tabs
-            activeTab={activeQuests.activeTab}
             onSortQuestsChange={handleSortQuestsChange}
           />
           <div className={classes.list}>
             {!quests.length ?
               <Loader/> :
               <ul>
-                {activeQuests.sortedQuests.map((quest: questType) => <Card quest={quest} key={quest.id}/>)}
+                {sortedQuests.map((quest: questType) => <Card quest={quest} key={quest.id}/>)}
               </ul>
             }
           </div>

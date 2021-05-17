@@ -142,6 +142,7 @@
 .title {
   border-bottom: 1px solid rgba(#e6e6e6, 0.3);
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
   padding-bottom: 22px;
 
@@ -229,12 +230,8 @@
     margin-bottom: 25px;
   }
 
-  button {
-    margin-right: 26px;
-
-    @media (max-width: phones) {
-      margin-right: 18px;
-    }
+  h2 {
+    margin: 0 20px 0 0;
   }
 
 

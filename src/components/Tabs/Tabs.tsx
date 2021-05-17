@@ -1,23 +1,20 @@
-import {FC} from "react";
+import {ChangeEvent, FC, FormEvent} from "react";
 import classes from "./Tabs.module.scss";
 import {tabs} from "../../data/tabs";
 import {tabType} from "../../types";
 import Tab from "../Tab/Tab";
 
 type Props = {
-  activeTab: string;
-  onSortQuestsChange: (title : string) => void;
+  onSortQuestsChange: (e: ChangeEvent<HTMLFormElement>) => void;
 }
 
-const Tabs: FC<Props> = ({onSortQuestsChange, activeTab}: Props) => {
+const Tabs: FC<Props> = ({onSortQuestsChange}: Props) => {
   return (
-    <form className={classes.tabs}>
+    <form className={classes.tabs} onChange={(e: ChangeEvent<HTMLFormElement>) => onSortQuestsChange(e)}>
       {tabs.map((tab: tabType) =>
         <Tab
           key={tab.id}
           tab={tab}
-          activeTab={activeTab}
-          onSortQuestsChange={onSortQuestsChange}
         />)}
     </form>
   )
