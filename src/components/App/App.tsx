@@ -6,6 +6,7 @@ import Popup from "../Popup/Popup";
 import Home from "../../pages/Home/Home";
 import Quests from "../../pages/Quests/Quests";
 import Quest from "../../pages/Quest/Quest";
+import Noobs from "../../pages/Noobs/Noobs";
 import Timetable from "../../pages/Timetable/Timetable";
 
 import classes from "./App.module.scss";
@@ -27,6 +28,7 @@ const App: FC = () => {
           <Route exact  path='/' component={Home}/>
           <Route exact path='/quest' component={Quest}/>
           <Route path='/quests' component={Quests}/>
+          <Route path='/noobs' component={Noobs}/>
           <Route path='/timetable' component={Timetable}/>
         </Switch>
         <Footer

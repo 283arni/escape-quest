@@ -1,0 +1,28 @@
+@value vars: '../../styles/vars.module.scss';
+@value background-quests, tablets, phones from vars;
+
+.noobs {
+    padding: 120px 0;
+    background: background-quests;
+}
+
+.container {
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 0 136px;
+  
+    @media (max-width: tablets) {
+      padding: 0 80px;
+    }
+  
+    @media (max-width: phones) {
+      padding: 0 16px;
+    }
+  
+    &--no-padding {
+      @media (max-width: phones) {
+        padding: 0;
+      }
+    }
+  }

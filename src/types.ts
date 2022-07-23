@@ -34,3 +34,8 @@ export type timeType = {
   price: string;
   reserved: boolean;
 }
+
+export type infoArticleType = {
+  title: string,
+  text: string
+}
